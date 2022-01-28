@@ -2,8 +2,6 @@ import FullPageSection from '../components/FullPageSection';
 import SubPage from '../components/SubPage';
 import imgMentats from '../assets/static/duneFactionsMentats.jpg';
 import imgBene from '../assets/static/duneFactionsBene.jpg';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import imgNavigatorOne from '../assets/static/duneFactionNavigator1.jpg';
 import imgNavigatorTwo from '../assets/static/duneFactionNavigator2.jpg';
 import imgNavigatorThree from '../assets/static/duneFactionNavigator3.jpg';
