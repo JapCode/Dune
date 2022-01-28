@@ -1,0 +1,59 @@
+@use '../utils' as utils;
+.subPage {
+  &:nth-child(2) {
+    background-color: utils.$color-secondary;
+  }
+  @include utils.box-container;
+  width: 100vw;
+  overflow: hidden;
+  @include utils.section-mobile-text(20px);
+  position: static;
+  @include utils.respond-to(utils.$breakpoint-tablet) {
+    padding: 86px 86px 0;
+  }
+  display: grid;
+  // grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    'title'
+    'text'
+    'img';
+  // 'text text';
+  @include utils.respond-to(utils.$breakpoint-desktop) {
+    // height: 65%;
+    height: 100vh;
+    padding: 0 86px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'title img'
+      'text img';
+    // 'text text';
+    justify-self: center;
+  }
+  &__description {
+    grid-area: text;
+    align-self: start;
+  }
+  &__img {
+    margin-top: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      grid-area: img;
+      align-self: center;
+      justify-self: center;
+      width: 70%;
+    }
+  }
+  figure > img {
+    width: 100%;
+  }
+}
+.subTitle {
+  @include utils.respond-to(utils.$breakpoint-desktop) {
+    grid-area: title;
+    align-self: end;
+    // justify-self: center;
+  }
+}

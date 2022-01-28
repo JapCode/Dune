@@ -1,0 +1,35 @@
+@use '../utils' as utils;
+
+.factions {
+  &__img {
+    @include utils.background-img-mobile('../static/duneFactionsMobile.jpg');
+    @include utils.respond-to(utils.$breakpoint-tablet) {
+      @include utils.background-img-mobile('../static/duneFactionsTablet.jpg');
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      @include utils.background-img-mobile('../static/duneFactionsDesktop.jpg');
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop2) {
+      @include utils.background-img-mobile(
+        '../static/duneFactionsDesktop2.jpg'
+      );
+    }
+    &:before {
+      @extend %background-gradient;
+      @include utils.respond-to(utils.$breakpoint-tablet) {
+        display: none;
+      }
+    }
+  }
+  &__description {
+    @include utils.text-box-overflow(86%);
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      overflow: hidden;
+    }
+  }
+  // &__container {
+  //   &:nth-child(n + 1) {
+  //     background-color: black;
+  //   }
+  // }
+}

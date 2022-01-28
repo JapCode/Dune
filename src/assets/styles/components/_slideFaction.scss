@@ -1,0 +1,37 @@
+@use '../utils' as utils;
+
+.slide-faction {
+  // width: 100%;
+  justify-self: center;
+  @include utils.respond-to(utils.$breakpoint-tablet) {
+    padding: 20px;
+    // width: 355px;
+    // overflow: scroll;
+    // align-items: center;
+    // justify-content: center;
+    // height: 100%;
+    // padding: 0 86px;
+  }
+  &__container {
+    display: flex;
+    gap: 22px;
+    padding: 20px 0;
+    width: 316px;
+    overflow: hidden;
+    @include utils.respond-to(utils.$breakpoint-tablet) {
+      width: 320px;
+    }
+  }
+  &__img {
+    transition: all 1s ease-in-out;
+    img {
+      width: 92px;
+      // max-width: 100px;
+      height: 100%;
+    }
+  }
+}
+.center {
+  transition: all 1s ease-in-out;
+  transform: scale(1.1);
+}

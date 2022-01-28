@@ -1,0 +1,28 @@
+@use '../utils/' as utils;
+
+.about {
+  &__img {
+    @include utils.background-img-mobile('../static/duneAboutMobile.jpg');
+    @include utils.respond-to(utils.$breakpoint-tablet) {
+      @include utils.background-img-mobile('../static/duneAboutTablet.jpg');
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      @include utils.background-img-mobile('../static/duneAboutDesktop1.jpg');
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop2) {
+      @include utils.background-img-mobile('../static/duneAboutDesktop2.jpg');
+    }
+    &:before {
+      @extend %background-gradient;
+      @include utils.respond-to(utils.$breakpoint-tablet) {
+        display: none;
+      }
+    }
+  }
+  &__description {
+    @include utils.text-box-overflow(86%);
+    @include utils.respond-to(utils.$breakpoint-tablet) {
+      overflow: hidden;
+    }
+  }
+}

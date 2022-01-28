@@ -1,0 +1,39 @@
+@use '../utils/' as utils;
+.dots {
+  opacity: 0;
+  transition: 1.5s ease-in-out all;
+  &.animation--start {
+    opacity: 1;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__item {
+    list-style: none;
+    a {
+      display: block;
+      border-radius: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      width: 15px;
+      height: 15px;
+    }
+  }
+  &__active {
+    animation: dots-animation 1s forwards;
+  }
+}
+@keyframes dots-animation {
+  0% {
+    border-radius: 40%;
+    // transform: rotate(360deg);
+  }
+  100% {
+    background-color: white;
+    border-radius: 10%;
+    transform: scale(1.1) rotate(225deg);
+  }
+}

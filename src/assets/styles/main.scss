@@ -1,0 +1,50 @@
+/*--------------------------\
+         Global
+---------------------------*/
+// @use './index';
+@use './utils' as *;
+@use './components' as *;
+@import '../fonts/fontStyle.css';
+// @import '../styles/lib/variables.scss';
+// @import '../styles/lib/mixins.scss';
+// @import './lib/placeHolders.scss';
+// @import './components/layout.scss';
+// @import './components/about.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: $base-font;
+  font-size: 62.5%;
+}
+body {
+  background-color: $color-primary;
+}
+p {
+  @extend %text-content;
+}
+.app {
+  position: relative;
+  z-index: 0;
+  overflow: clip;
+  // @include box-container;
+}
+.title {
+  @extend %text-title;
+}
+.subTitle {
+  @extend %text-subTitle;
+}
+// .background--gradient {
+//   position: absolute;
+//   width: 100vw;
+//   height: 100vh;
+//   background: $color-opacity-one;
+//   z-index: -1;
+// }
+.btn {
+  @include btn-m;
+  @include box-shadow;
+}

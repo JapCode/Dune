@@ -1,0 +1,15 @@
+.socialMediaLinks {
+  opacity: 0;
+  transition: 1.5s ease-in-out all;
+  &__container {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  &.animation--start {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../utils' as utils;
+
+.fullPage {
+  @include utils.box-container;
+  @extend %img-mobile-layout;
+  z-index: -1;
+  &__section {
+    z-index: -1;
+    @include utils.section-mobile-text(0 20px);
+    @include utils.respond-to(utils.$breakpoint-tablet) {
+      height: 80%;
+      padding: 0 40px;
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      height: 65%;
+      padding: 0 86px;
+    }
+  }
+  p {
+    &:first-child {
+      width: 60%;
+      @include utils.respond-to(utils.$breakpoint-desktop) {
+        width: 45%;
+      }
+    }
+    @include utils.respond-to(utils.$breakpoint-tablet) {
+      padding-top: 70px;
+      width: 60%;
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      padding-top: 21px;
+      width: 45%;
+    }
+  }
+}
