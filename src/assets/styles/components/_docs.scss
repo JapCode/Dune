@@ -51,22 +51,34 @@
     // background-color: azure;
     scrollbar-color: #a9a3a1 transparent;
     scrollbar-width: thin;
-    scrollbar-gutter: stable && both-edges;
+    scrollbar-gutter: stable and both-edges;
     &::-webkit-scrollbar {
       width: 2px;
+      &-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+      &-thumb {
+        background-color: #a9a3a1;
+        outline: 1px solid slategrey;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+      }
     }
-    &::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #a9a3a1;
-      outline: 1px solid slategrey;
-      border-radius: 20px;
-      -webkit-border-radius: 20px;
-      -moz-border-radius: 20px;
-      -ms-border-radius: 20px;
-      -o-border-radius: 20px;
-    }
+    // &::-webkit-scrollbar-track {
+    //   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    // }
+    // &::-webkit-scrollbar-thumb {
+    //   background-color: #a9a3a1;
+    //   outline: 1px solid slategrey;
+    //   border-radius: 20px;
+    //   -webkit-border-radius: 20px;
+    //   -moz-border-radius: 20px;
+    //   -ms-border-radius: 20px;
+    //   -o-border-radius: 20px;
+    // }
   }
   // @include utils.respond-to(utils.$breakpoint-desktop) {
   //   background-color: aqua;
