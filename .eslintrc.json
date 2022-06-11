@@ -31,6 +31,6 @@
     "no-sparse-arrays": 2,
     "array-bracket-spacing": 2,
     "no-array-constructor": 2,
-    "explicitSpread": "ignore"
+    "react/jsx-props-no-spreading": 0
     }
 }

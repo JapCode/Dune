@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 function SlideFaction(prop) {
-  const [loop, setLoop] = useState(true);
-  const [active, setActive] = useState(2);
+  // const [loop, setLoop] = useState(true);
+  // const [active, setActive] = useState(2);
+  const active = 2;
   const { imgOne, imgTwo, imgThree } = prop;
-  const [items, setItems] = useState([imgThree, imgOne, imgTwo]);
+  // const [items, setItems] = useState([imgThree, imgOne, imgTwo]);
+  const items = [imgThree, imgOne, imgTwo];
   const slideShow = useRef(null);
 
   // function loopSliders() {
@@ -17,17 +19,11 @@ function SlideFaction(prop) {
   // }
 
   // loopSliders();
-  useEffect(() => {
-    const interval = setInterval(() => {
-      slideDefinitive();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   async function removeCenter() {
-    for (let i = 0; i < slideShow.current.children.length; i++) {
+    for (let i = 0; i < slideShow.current.children.length; i += 1) {
       if (slideShow.current.children[i].classList.contains('center')) {
-        await slideShow.current.children[i].classList.remove('center');
+        slideShow.current.children[i].classList.remove('center');
       }
     }
   }
@@ -43,14 +39,14 @@ function SlideFaction(prop) {
   }
   function removeNode() {
     const remove = slideShow.current.children[0];
-    console.log(remove);
     remove.remove();
   }
   async function waitFor(ms) {
+    // eslint-disable-next-line no-promise-executor-return
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
   async function nextSlide() {
-    let firstElement = slideShow.current.children[0];
+    const firstElement = slideShow.current.children[0];
     const size = firstElement.offsetWidth;
     addNode();
     firstElement.style.marginLeft = `-${size + 22}px`;
@@ -63,20 +59,24 @@ function SlideFaction(prop) {
     await removeCenter();
     await slideCenter();
   }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slideDefinitive();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
   return (
-    <>
-      <div className="slide-faction">
-        <div className="slide-faction__container" ref={slideShow}>
-          {items.map((item) => {
-            return (
-              <div key={items.indexOf(item)} className={`slide-faction__img `}>
-                <img src={item} alt="faction navigators" />
-              </div>
-            );
-          })}
-        </div>
+    <div className="slide-faction">
+      <div className="slide-faction__container" ref={slideShow}>
+        {items.map((item) => {
+          return (
+            <div key={items.indexOf(item)} className={`slide-faction__img `}>
+              <img src={item} alt="faction navigators" />
+            </div>
+          );
+        })}
       </div>
-    </>
+    </div>
   );
 }
 export default SlideFaction;

@@ -1,13 +1,8 @@
+import { useContext, useEffect } from 'react';
 import FullPageSection from '../components/FullPageSection';
 import SubPage from '../components/SubPage';
-import imgMentats from '../assets/static/duneFactionsMentats.jpg';
-import imgBene from '../assets/static/duneFactionsBene.jpg';
-import imgNavigatorOne from '../assets/static/duneFactionNavigator1.jpg';
-import imgNavigatorTwo from '../assets/static/duneFactionNavigator2.jpg';
-import imgNavigatorThree from '../assets/static/duneFactionNavigator3.jpg';
 import SlideFaction from '../components/SlideFaction';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
-import { useContext, useEffect } from 'react';
 import { VisibleContext } from '../context/VisibleContext';
 import useWindowSize from '../hooks/WindowSize';
 
@@ -43,7 +38,7 @@ function Factions() {
     'Para poder desempeñar el rol de un Mentat, se necesita de una gran disposición mental y de cálculo, y no se puede de otra forma. Sin embargo, hay que tener en cuenta que no todos los Mentats son iguales, como alguna especie de máquina producida en masa, sino que cada uno tiene sus peculiaridades.',
     'Los Mentats no son solamente computadoras humanas, por así decir, sino que también gozan de una increíble capacidad de memoria y percepción cognitiva, detectando con relativa facilidad posibles amenazas. La gran habilidad táctica y estratégica de los Mentat supera, de hecho, a las antiguas máquinas pensantes pre-Yihad Butleriana. Tan eficaces pueden ser algunos Mentat que hasta los mismisimos emperadores temen de su poder',
   ];
-  const subImgMentats = imgMentats;
+  const subImgMentats = 'https://i.imgur.com/G07VEj4.jpg';
   const SubTitleTwo = 'La Cofradia Espacial';
   const subParagraphsTwo = [
     'Es una organización apolítica, y su interés es que la “especia fluya” por el universo, mantienen un monopolio total en el transporte interestelar, ya que son los únicos con navegantes capaces de guiar a las naves a través del espacio. los navegadores, humanos que han remplazado a las maquinas en el complejo trazado de los viajes espaciales,',
@@ -55,10 +50,10 @@ function Factions() {
     'El objetivo principal de Bene Gesserit era lograr más poder e influencia y ayudar a dirigir a la humanidad a lo largo de un camino de perspicacia y estabilidad',
     'Las escuelas Bene Gesserit fueron diseñadas para maximizar el potencial físico y mental de la humanidad, especialmente las mujeres. Como resultado, las adeptas Bene Gesserit poseían habilidades que nadie más podía rivalizar en el universo conocido. Bene Gesserit podría controlar cada músculo y nervio de su cuerpo, hasta las fibras individuales, una voz que le permite influir directamente en las personas, un sentido de la verdad que les permite reconocer las mentiras y un control de su fertilidad cosa que les permite decidir cuando quedarse embarazadas o el sexo del embrion, el mayor poder de una Bene Gesserit lo obtiene cuando pasa de acolita a reverenda madre, tras sobrevivir a un proceso llamdo la agonia obtienen sus recuerdos ancestrales la experiencia de vida de sus ancestros femeninos',
   ];
-  const subImgBene = imgBene;
-  const subImgNavigatorOne = imgNavigatorOne;
-  const subImgNavigatorTwo = imgNavigatorTwo;
-  const subImgNavigatorThree = imgNavigatorThree;
+  const subImgBene = 'https://i.imgur.com/R96WJyJ.jpg';
+  const subImgNavigatorOne = 'https://i.imgur.com/fE3dlfE.jpg';
+  const subImgNavigatorTwo = 'https://i.imgur.com/Mjvk4X9.jpg';
+  const subImgNavigatorThree = 'https://i.imgur.com/b5b3DGe.jpg';
   return (
     <>
       <FullPageSection page={page} title={title} paragraphs={paragraphs} />;

@@ -2,15 +2,15 @@
 
 .houses {
   &__img {
-    @include utils.background-img-mobile('../static/duneHousesMobile.jpg');
+    @include utils.background-img-mobile('https://i.imgur.com/PEKJ9V7.jpg');
     @include utils.respond-to(utils.$breakpoint-tablet) {
-      @include utils.background-img-mobile('../static/duneHousesTablet.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/qjLGaES.jpg');
     }
     @include utils.respond-to(utils.$breakpoint-desktop) {
-      @include utils.background-img-mobile('../static/duneHousesDesktop1.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/fVvmzds.jpg');
     }
     @include utils.respond-to(utils.$breakpoint-desktop2) {
-      @include utils.background-img-mobile('../static/duneHousesDesktop2.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/hkSbcCJ.jpg');
     }
     &:before {
       @extend %background-gradient;
@@ -23,6 +23,11 @@
     @include utils.text-box-overflow(86%);
     @include utils.respond-to(utils.$breakpoint-desktop) {
       scrollbar-color: transparent transparent;
+    }
+  }
+  @include utils.respond-to(utils.$breakpoint-desktop) {
+    &__description::-webkit-scrollbar {
+      display: none;
     }
   }
   &__container {

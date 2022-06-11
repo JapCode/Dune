@@ -8,31 +8,31 @@ function Dots() {
           <NavLink
             to="/"
             className={(dotsData) => (dotsData.isActive ? 'dots__active' : '')}
-          ></NavLink>
+          />
         </li>
         <li className="dots__item">
           <NavLink
             to="/about"
             className={(dotsData) => (dotsData.isActive ? 'dots__active' : '')}
-          ></NavLink>
+          />
         </li>
         <li className="dots__item">
           <NavLink
             to="/factions"
             className={(dotsData) => (dotsData.isActive ? 'dots__active' : '')}
-          ></NavLink>
+          />
         </li>
         <li className="dots__item">
           <NavLink
             to="/houses"
             className={(dotsData) => (dotsData.isActive ? 'dots__active' : '')}
-          ></NavLink>
+          />
         </li>
         <li className="dots__item">
           <NavLink
-            to="/dots"
+            to="/docs"
             className={(dotsData) => (dotsData.isActive ? 'dots__active' : '')}
-          ></NavLink>
+          />
         </li>
       </ul>
     </div>

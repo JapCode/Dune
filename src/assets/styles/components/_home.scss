@@ -9,15 +9,15 @@
   z-index: -1;
   &:before {
     content: '';
-    @include utils.background-img-mobile('../static/duneHomeMobileBlack.jpg');
+    @include utils.background-img-mobile('https://i.imgur.com/yeHNy0z.jpg');
     @include utils.respond-to(utils.$breakpoint-tablet) {
-      @include utils.background-img-mobile('../static/duneHomeTablet.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/3vBKwPu.jpg');
     }
     @include utils.respond-to(utils.$breakpoint-desktop) {
-      @include utils.background-img-mobile('../static/duneHomeDesktop1.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/3vBKwPu.jpg');
     }
     @include utils.respond-to(utils.$breakpoint-desktop2) {
-      @include utils.background-img-mobile('../static/duneHomeDesktop2.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/XykDfIs.jpg');
     }
   }
   &__container {

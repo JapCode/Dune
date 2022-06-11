@@ -1,4 +1,4 @@
-import { useState, useContext, useRef, useEffect, useCallback } from 'react';
+import { useState, useContext, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { VisibleContext } from '../../context/VisibleContext';
 import useWindowSize from '../../hooks/WindowSize';
@@ -11,10 +11,22 @@ function Layout(props) {
   const { isVisibleData } = useContext(VisibleContext);
   const [animationStart, setAnimationStart] = useState(false);
   const [animationStartLeft, setAnimationStartLeft] = useState(false);
+  const { setIsVisibleData } = useContext(VisibleContext);
   // const lineLeft = useRef(null);
   const size = useWindowSize();
-  // const location = useLocation();
-  const prop = props;
+  const location = useLocation();
+  // eslint-disable-next-line react/prop-types
+  const { children } = props;
+
+  useEffect(() => {
+    if (
+      location.pathname === '/' ||
+      location.pathname === '/about' ||
+      location.pathname === '/docs'
+    ) {
+      setIsVisibleData(false);
+    }
+  });
 
   function hamburgerBtn() {
     if (isOpen) {
@@ -23,13 +35,13 @@ function Layout(props) {
       setIsOpen(true);
     }
   }
-  //for delay an the selected option in the menu
-  function handleChildClick() {
+  // for delay an the selected option in the menu
+  const handleChildClick = () => {
     setTimeout(() => {
       hamburgerBtn();
     }, 600);
-  }
-  //set ref in the lines to add animation
+  };
+  // set ref in the lines to add animation
   const myRef = useCallback(async (node) => {
     if (node !== null) {
       setAnimationStart(node.children);
@@ -40,30 +52,31 @@ function Layout(props) {
       setAnimationStartLeft(node.children);
     }
   }, []);
-  //useEffect to add animation to the lines
-  useEffect(() => {
-    startAnimation(animationStart, 6000);
-    startAnimation(animationStartLeft, 10000);
-  }, [animationStart, animationStartLeft]);
+  // useEffect to add animation to the lines
 
-  //function to start animation to the lines
+  // function to start animation to the lines
   function startAnimation(objet, time) {
-    console.log(objet);
     if (objet !== null) {
       setTimeout(() => {
-        for (let i = 0; i < objet.length; i++) {
+        for (let i = 0; i < objet.length; i += 1) {
           if (!objet[i].classList.contains('animation--start')) {
-            let element = objet[i];
+            const element = objet[i];
             setTimeout(() => {
               element.classList.add('animation--start');
-              console.log(element);
-            }, i * 1000);
+            }, i * 900);
           }
         }
       }, time);
     }
   }
-
+  useEffect(() => {
+    let timeToStart = 1000;
+    if (location.pathname === '/') {
+      timeToStart = 4500;
+    }
+    startAnimation(animationStart, timeToStart);
+    startAnimation(animationStartLeft, timeToStart + 3600);
+  }, [animationStart, animationStartLeft]);
   return (
     <>
       <nav className={`navigation ${isVisibleData ? 'navVisible' : undefined}`}>
@@ -71,7 +84,7 @@ function Layout(props) {
           <>
             <div className="navigation__left" ref={myRef}>
               <svg
-                className={`navigation__left--line--top`}
+                className="navigation__left--line--top"
                 height="2px"
                 width={`${size.width / 3}`}
               >
@@ -139,13 +152,15 @@ function Layout(props) {
             </div>
           </>
         )}
-        <button className="menu--icon" onClick={hamburgerBtn}>
-          <span className={`hamburger ${isOpen ? 'menu-open' : ''}`}></span>
+        <button type="button" className="menu--icon" onClick={hamburgerBtn}>
+          <span className={`hamburger ${isOpen ? 'menu-open' : ''}`} />
         </button>
         <Menu menuActive={isOpen} onClickMenu={handleChildClick} />
-        <i className={`menu__desktop ${isOpen ? 'is-active' : ''}`}></i>
+        {size.width > 600 && (
+          <i className={`menu__desktop ${isOpen ? 'is-active' : ''}`} />
+        )}
       </nav>
-      <main className="layout">{prop.children}</main>
+      <main className="layout">{children}</main>
     </>
   );
 }

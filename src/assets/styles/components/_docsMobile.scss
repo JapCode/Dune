@@ -1,0 +1,27 @@
+@use '../utils/' as utils;
+.docsMobile {
+  padding: 30px;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  &__cardsContainer {
+    overflow-y: scroll;
+    display: flex;
+    gap: 25px;
+    scroll-snap-type: x mandatory;
+  }
+  &__title {
+    font-size: utils.$text-size-title;
+    color: utils.$color-clear;
+    padding-bottom: 20px;
+  }
+  &__subTitle {
+    font-size: utils.$text-size-subTitle;
+    color: utils.$color-clear;
+    padding-top: 20px;
+  }
+  &__cardsContainer {
+    padding: 44px 0;
+  }
+}

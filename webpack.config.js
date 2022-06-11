@@ -1,13 +1,14 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '',
+    publicPath: '/',
     assetModuleFilename: 'images/[hash][ext][query]',
   },
   resolve: {
@@ -65,6 +66,11 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
+    }),
+    new Dotenv({
+      path: './.env',
+      systemvars: true,
+      safe: true,
     }),
   ],
 };

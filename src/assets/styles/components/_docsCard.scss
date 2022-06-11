@@ -1,0 +1,45 @@
+@use '../utils/' as utils;
+.docsCard {
+  background: utils.$color-secondary;
+  color: white;
+  min-width: 244px;
+  min-height: 382px;
+  width: 244px;
+  height: 382px;
+  scroll-snap-align: start;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  @include utils.respond-to(utils.$breakpoint-desktop) {
+    width: 345px;
+    height: 525px;
+  }
+  &__img {
+    height: 45%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  &__details {
+    padding-left: 30px;
+    padding-top: 40px;
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      padding-top: 50px;
+    }
+  }
+  &__title {
+    font-size: 26px;
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      font-size: 36px;
+    }
+  }
+  &__element {
+    font-size: 18px;
+    padding-top: 10px;
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      padding-top: 21px;
+    }
+  }
+}

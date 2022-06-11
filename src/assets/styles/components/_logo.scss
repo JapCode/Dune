@@ -22,7 +22,8 @@
     stroke: white;
     stroke-dasharray: 900;
     stroke-dashoffset: 900;
-    animation: logo-animation 5s linear 1 forwards;
+    animation: logo-animation 3s linear 1 forwards;
+    -webkit-animation: logo-animation 3s linear 1 forwards;
   }
   &__brightness {
     svg {
@@ -35,18 +36,18 @@
     &--1 {
       stroke-dasharray: 900;
       stroke-dashoffset: 900;
-      animation: logo-brightness 10s linear 1 forwards;
+      animation: logo-brightness 6s linear 1 forwards;
       stroke: utils.$color-clear;
     }
     &--2 {
       stroke-dasharray: 900;
       stroke-dashoffset: 900;
-      animation: logo-brightness 10s linear 1 forwards;
+      animation: logo-brightness 6s linear 1 forwards;
     }
     &--3 {
       stroke-dasharray: 0 400;
       stroke-dashoffset: 250;
-      animation: logo-brightness 10s linear 1 forwards;
+      animation: logo-brightness 6s linear 1 forwards;
     }
   }
 }

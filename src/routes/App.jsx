@@ -6,20 +6,31 @@ import Houses from '../containers/Houses';
 import Docs from '../containers/Docs';
 import Layout from '../components/common/Layout';
 import '../assets/styles/main.scss';
+import NotFound from '../containers/NotFound';
+import GetAll from '../components/GetAll';
+import GetSingle from '../components/GetSingle';
+import DocsSchema from '../components/DocsSchema';
 
 function App() {
   return (
+    // <BrowserRouter basename="/Dune">
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/About" element={<About />} />
-          <Route exact path="/factions" element={<Factions />} />
-          <Route exact path="/houses" element={<Houses />} />
-          <Route exact path="/docs" element={<Docs />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/factions" element={<Factions />} />
+          <Route path="/houses" element={<Houses />} />
+          <Route path="/docs" element={<Docs />}>
+            <Route path="schema" element={<DocsSchema />} />
+            <Route path="getAll" element={<GetAll />} />
+            <Route path="getSingle" element={<GetSingle />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>
+    // </BrowserRouter>
   );
 }
 

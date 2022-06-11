@@ -2,15 +2,15 @@
 
 .about {
   &__img {
-    @include utils.background-img-mobile('../static/duneAboutMobile.jpg');
+    @include utils.background-img-mobile('https://i.imgur.com/W33G8XO.jpg');
     @include utils.respond-to(utils.$breakpoint-tablet) {
-      @include utils.background-img-mobile('../static/duneAboutTablet.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/Qba3que.jpg');
     }
     @include utils.respond-to(utils.$breakpoint-desktop) {
-      @include utils.background-img-mobile('../static/duneAboutDesktop1.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/eLxrK8i.jpg');
     }
     @include utils.respond-to(utils.$breakpoint-desktop2) {
-      @include utils.background-img-mobile('../static/duneAboutDesktop2.jpg');
+      @include utils.background-img-mobile('https://i.imgur.com/Y81ScCo.jpg');
     }
     &:before {
       @extend %background-gradient;

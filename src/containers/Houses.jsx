@@ -1,12 +1,13 @@
+import { useContext, useEffect } from 'react';
 import FullPageSection from '../components/FullPageSection';
 import SupPage from '../components/SubPage';
-import imgHouseAtreides from '../assets/static/duneHouseAtreides.png';
-import imgHouseHarkonen from '../assets/static/duneHouseHarkonen.png';
-import imgHouseCorrino from '../assets/static/duneHouseCorrino.png';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
-import { useContext, useEffect } from 'react';
 import { VisibleContext } from '../context/VisibleContext';
 import useWindowSize from '../hooks/WindowSize';
+
+const imgHouseAtreides = 'https://i.imgur.com/KCTNGEd.png';
+const imgHouseHarkonen = 'https://i.imgur.com/t0gt77R.png';
+const imgHouseCorrino = 'https://i.imgur.com/hMC8Wdu.png';
 
 function Houses() {
   const [containerRef, isVisible] = useIntersectionObserver({

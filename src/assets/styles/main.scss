@@ -18,9 +18,18 @@
 html {
   font-family: $base-font;
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  @include respond-to($breakpoint-desktop) {
+    scrollbar-width: none;
+  }
 }
 body {
   background-color: $color-primary;
+  @include respond-to($breakpoint-desktop) {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 p {
   @extend %text-content;
@@ -47,4 +56,12 @@ p {
 .btn {
   @include btn-m;
   @include box-shadow;
+}
+.punpun {
+  font-size: 13px;
+  padding: 20px 0;
+  @include respond-to($breakpoint-desktop) {
+    font-size: 20px;
+    padding: 60px 0;
+  }
 }

@@ -10,6 +10,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
+  cursor: pointer;
   @include utils.respond-to(959px) {
     right: 31px;
   }
@@ -88,8 +89,8 @@
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    stroke-dasharray: 600;
-    stroke-dashoffset: 632;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
     transition: 1s ease-in-out all;
     &--line {
       &--top {
@@ -127,8 +128,8 @@
     align-items: center;
     flex-direction: column-reverse;
     gap: 1rem;
-    stroke-dasharray: 600;
-    stroke-dashoffset: 632;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
     transition: 1s ease-in-out all;
     &--line {
       &--right {
@@ -170,8 +171,8 @@
 
 @keyframes layout-animation {
   from {
-    stroke-dasharray: 600;
-    stroke-dashoffset: 632;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
     transition: 1.5s ease-in-out all;
   }
   // 50% {
@@ -180,15 +181,16 @@
   // }
   to {
     transition: 1.5s ease-in-out all;
-    stroke-dasharray: 489;
+    // stroke-dasharray: 489;
+    stroke-dasharray: 1000;
     stroke-dashoffset: 0;
   }
 }
 @keyframes layout-animation-reverse {
   0% {
     transition: 1.5s ease-in-out all;
-    stroke-dasharray: 600;
-    stroke-dashoffset: -600;
+    stroke-dasharray: 800;
+    stroke-dashoffset: -800;
   }
   // 50% {
   //   stroke-dasharray: 600;
@@ -196,7 +198,8 @@
   // }
   100% {
     transition: 1.5s ease-in-out all;
-    stroke-dasharray: 489;
+    // stroke-dasharray: 489;
+    stroke-dasharray: 1000;
     stroke-dashoffset: 0;
   }
 }
