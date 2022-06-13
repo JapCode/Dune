@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'ageo_personal_usebold';
-    src: url(images/df870f077c3e2dfabdb7.woff2) format('woff2'),
-         url(images/41fa483f107a4bf55a61.woff) format('woff');
+    src: url(/images/df870f077c3e2dfabdb7.woff2) format('woff2'),
+         url(/images/41fa483f107a4bf55a61.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 
