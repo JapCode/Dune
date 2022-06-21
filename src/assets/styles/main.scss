@@ -1,0 +1,67 @@
+/*--------------------------\
+         Global
+---------------------------*/
+// @use './index';
+@use './utils' as *;
+@use './components' as *;
+@import '../fonts/fontStyle.css';
+// @import '../styles/lib/variables.scss';
+// @import '../styles/lib/mixins.scss';
+// @import './lib/placeHolders.scss';
+// @import './components/layout.scss';
+// @import './components/about.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: $base-font;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  @include respond-to($breakpoint-desktop) {
+    scrollbar-width: none;
+  }
+}
+body {
+  background-color: $color-primary;
+  @include respond-to($breakpoint-desktop) {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+p {
+  @extend %text-content;
+}
+.app {
+  position: relative;
+  z-index: 0;
+  overflow: clip;
+  // @include box-container;
+}
+.title {
+  @extend %text-title;
+}
+.subTitle {
+  @extend %text-subTitle;
+}
+// .background--gradient {
+//   position: absolute;
+//   width: 100vw;
+//   height: 100vh;
+//   background: $color-opacity-one;
+//   z-index: -1;
+// }
+.btn {
+  @include btn-m;
+  @include box-shadow;
+}
+.punpun {
+  font-size: 13px;
+  padding: 20px 0;
+  @include respond-to($breakpoint-desktop) {
+    font-size: 20px;
+    padding: 60px 0;
+  }
+}

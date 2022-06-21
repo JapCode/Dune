@@ -1,0 +1,33 @@
+@use '../utils' as utils;
+
+.factions {
+  &__img {
+    @include utils.background-img-mobile('https://i.imgur.com/ey9jjGk.jpg');
+    @include utils.respond-to(utils.$breakpoint-tablet) {
+      @include utils.background-img-mobile('https://i.imgur.com/dnlzJCP.jpg');
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      @include utils.background-img-mobile('https://i.imgur.com/4zBXHI3.jpg');
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop2) {
+      @include utils.background-img-mobile('https://i.imgur.com/jW3GpRY.jpg');
+    }
+    &:before {
+      @extend %background-gradient;
+      @include utils.respond-to(utils.$breakpoint-tablet) {
+        display: none;
+      }
+    }
+  }
+  &__description {
+    @include utils.text-box-overflow(86%);
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      overflow: hidden;
+    }
+  }
+  // &__container {
+  //   &:nth-child(n + 1) {
+  //     background-color: black;
+  //   }
+  // }
+}

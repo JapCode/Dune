@@ -1,0 +1,49 @@
+@use '../utils/' as utils;
+.docsSchema {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  height: 900px;
+  // padding-top: 60px;
+  grid-template-columns: 80px 75px 1fr;
+  @include utils.respond-to(utils.$breakpoint-desktop) {
+    width: 80%;
+    height: 100%;
+    grid-template-columns: 96px 85px 1fr;
+  }
+  color: white;
+  &__key,
+  &__type,
+  &__description {
+    &--title {
+      font-size: 35px;
+      font-weight: bold;
+    }
+  }
+
+  li {
+    padding: 5px 0;
+    font-size: 16px;
+    list-style: none;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.3);
+    height: 55px;
+    display: flex;
+    align-items: center;
+    &:nth-child(9) {
+      height: 100px;
+      @include utils.respond-to(utils.$breakpoint-desktop) {
+        height: 55px;
+      }
+    }
+    &:last-child {
+      height: 200px;
+      @include utils.respond-to(utils.$breakpoint-desktop) {
+        height: 55px;
+      }
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      align-items: end;
+      height: 55px;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use '../utils/' as utils;
+
+.houses {
+  &__img {
+    @include utils.background-img-mobile('https://i.imgur.com/PEKJ9V7.jpg');
+    @include utils.respond-to(utils.$breakpoint-tablet) {
+      @include utils.background-img-mobile('https://i.imgur.com/qjLGaES.jpg');
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      @include utils.background-img-mobile('https://i.imgur.com/fVvmzds.jpg');
+    }
+    @include utils.respond-to(utils.$breakpoint-desktop2) {
+      @include utils.background-img-mobile('https://i.imgur.com/hkSbcCJ.jpg');
+    }
+    &:before {
+      @extend %background-gradient;
+      @include utils.respond-to(utils.$breakpoint-tablet) {
+        display: none;
+      }
+    }
+  }
+  &__description {
+    @include utils.text-box-overflow(86%);
+    @include utils.respond-to(utils.$breakpoint-desktop) {
+      scrollbar-color: transparent transparent;
+    }
+  }
+  @include utils.respond-to(utils.$breakpoint-desktop) {
+    &__description::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__container {
+    .subPage:nth-child(2n + 1) {
+      @include utils.respond-to(utils.$breakpoint-desktop) {
+        grid-template-areas:
+          'img title'
+          'img text';
+      }
+    }
+  }
+}

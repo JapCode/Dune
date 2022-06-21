@@ -1,0 +1,27 @@
+/*---------------------------\
+        $VARIABLES
+\---------------------------*/
+//--------Colours----------//
+$color-primary: #1c0e07;
+$color-secondary: #28130a;
+$color-tertiary: #060604;
+$color-clear: #fff;
+$color-shadow-one: rgba(40, 19, 10, 0.25);
+$color-opacity-one: rgba(40, 19, 10, 0.6);
+$color-opacity-two: rgba(28, 14, 7, 0.3);
+//--------Fonts------------//
+// @import '../../fonts/fontStyle.css';
+
+$title-font: 'ageo_personal_usebold', sans-serif;
+$base-font: 'Lato', sans-serif;
+
+$text-size-text: 1.4rem;
+$text-size-title: 3.6rem;
+$text-size-subTitle: 2.9rem;
+$text-size-text-desktop: 1.8rem;
+$text-size-title-desktop: 3.6rem;
+$text-button-size: 2rem;
+
+$breakpoint-tablet: 600px;
+$breakpoint-desktop: 950px;
+$breakpoint-desktop2: 1800px;

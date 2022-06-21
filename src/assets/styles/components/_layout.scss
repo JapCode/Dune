@@ -1,0 +1,205 @@
+@use '../utils/' as utils;
+.menu--icon {
+  all: unset;
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+  @include utils.respond-to(959px) {
+    right: 31px;
+  }
+}
+.hamburger {
+  display: block;
+  position: relative;
+  width: 28.5px;
+  height: 4.69px;
+  background: utils.$color-clear;
+  transition: all 0.3s ease-in-out;
+  &:before {
+    width: 38px;
+    background: utils.$color-clear;
+    height: 4.69px;
+    content: '';
+    position: absolute;
+    bottom: 14px;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  &:after {
+    transition: all 0.3s ease-in-out;
+    top: 14px;
+    background: utils.$color-clear;
+    width: 16.61px;
+    height: 4.69px;
+    content: '';
+    position: absolute;
+    right: 0;
+  }
+}
+.hamburger.menu-open {
+  width: 38px;
+  transform: rotate(45deg);
+  transition: 0.5s ease-in-out all;
+}
+.menu-open::after {
+  width: 38px;
+  opacity: 0;
+  // transform: rotate(45deg);
+}
+.menu-open::before {
+  transform: rotate(90deg) translate(14px);
+  // transform: rotate(144deg) translate(-6px);
+}
+// .hamburger,
+// .hamburger::before,
+// .hamburger::after {
+//   width: 2em;
+//   height: 3px;
+//   background: white;
+
+//   transition: transform 350ms ease-in-out, opacity 200ms linear;
+// }
+.navigation {
+  position: sticky;
+  top: 0;
+  transition: 1s ease-in-out all;
+  z-index: 2;
+  // svg{
+  //   line{
+  //     stroke
+  //   }
+  // }
+  &__left {
+    // stroke-dasharray: 489;
+    // stroke-dashoffset: 489;
+    height: 95vh;
+    width: 24px;
+    position: absolute;
+    top: 2vh;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    transition: 1s ease-in-out all;
+    &--line {
+      &--top {
+        // animation: layout-animation-reverse 2s linear;
+        position: absolute;
+        top: 0;
+        left: 12px;
+        stroke: white;
+        stroke-width: 2px;
+        &.animation--start {
+          animation: layout-animation-reverse 1s forwards;
+        }
+      }
+      &--left {
+        // animation: layout-animation 2s linear;
+        top: 15px;
+        stroke: white;
+        stroke-width: 2px;
+        // stroke-dasharray: 600;
+        // stroke-dashoffset: 632;
+        &.animation--start {
+          animation: layout-animation 1s forwards;
+        }
+      }
+    }
+  }
+  &__right {
+    height: 89.2vh;
+    width: 24px;
+    position: absolute;
+    top: 8vh;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    transition: 1s ease-in-out all;
+    &--line {
+      &--right {
+        // top: 15px;
+        stroke: white;
+        stroke-width: 2px;
+        // animation: layout-animation-reverse 2s linear alternate;
+        &.animation--start {
+          animation: layout-animation-reverse 1s forwards;
+        }
+      }
+      &--bottom {
+        // animation: layout-animation-reverse 2s linear alternate;
+        position: absolute;
+        top: 89.2vh;
+        right: 12px;
+        stroke: white;
+        stroke-width: 2px;
+        &.animation--start {
+          animation: layout-animation 1s forwards;
+        }
+      }
+    }
+  }
+}
+.navVisible {
+  background-color: utils.$color-secondary;
+  display: block;
+  // width: 100vw;
+  height: 60px;
+}
+.layout {
+  position: relative;
+  z-index: 0;
+}
+// .animation--start {
+//   animation: layout-animation 2s forwards;
+// }
+
+@keyframes layout-animation {
+  from {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    transition: 1.5s ease-in-out all;
+  }
+  // 50% {
+  //   stroke-dasharray: 600;
+  //   stroke-dashoffset: 244.5;
+  // }
+  to {
+    transition: 1.5s ease-in-out all;
+    // stroke-dasharray: 489;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes layout-animation-reverse {
+  0% {
+    transition: 1.5s ease-in-out all;
+    stroke-dasharray: 800;
+    stroke-dashoffset: -800;
+  }
+  // 50% {
+  //   stroke-dasharray: 600;
+  //   stroke-dashoffset: 244.5;
+  // }
+  100% {
+    transition: 1.5s ease-in-out all;
+    // stroke-dasharray: 489;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+}

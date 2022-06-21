@@ -1,0 +1,42 @@
+/*----------------------------------\
+          %PLACE HOLDERS
+ \---------------------------------*/
+@use './variables.scss' as vars;
+@use './mixins' as mixins;
+
+%text-title {
+  font-family: vars.$title-font;
+  font-size: vars.$text-size-title;
+  color: #fff;
+  letter-spacing: -1.6px;
+}
+%text-subTitle {
+  font-family: vars.$title-font;
+  font-size: vars.$text-size-subTitle;
+  color: #fff;
+  letter-spacing: -1px;
+}
+%text-content {
+  padding-top: 21px;
+  color: #fff;
+  font-size: vars.$text-size-text;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.1rem;
+}
+%img-mobile-layout {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  // z-index: -1;
+}
+%background-gradient {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: vars.$color-opacity-one;
+  z-index: -1;
+}
