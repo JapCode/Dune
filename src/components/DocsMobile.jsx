@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import DocsUrlPath from './common/DocsUrlPath';
 import DocsCards from './DocsCards';
 import DocsSchema from './DocsSchema';
-import { DOCSGETALLURL, DOCSGETSINGLE } from '../utils/constants';
+import { DOCSGETALLURL, DOCSGETSINGLE } from '../../utils/constants';
 import useCallApi from '../hooks/CallApi';
 
 const config = {

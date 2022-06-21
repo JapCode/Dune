@@ -13,8 +13,8 @@ import DocsSchema from '../components/DocsSchema';
 
 function App() {
   return (
-    // <BrowserRouter basename="/Dune">
-    <BrowserRouter>
+    <BrowserRouter basename="/Dune">
+      {/* <BrowserRouter> */}
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,8 +29,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
+      {/* </BrowserRouter> */}
     </BrowserRouter>
-    // </BrowserRouter>
   );
 }
 

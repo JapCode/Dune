@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useEffect, useState } from 'react';
 import DocsUrlPath from './common/DocsUrlPath';
-import { DOCSGETALLURL } from '../utils/constants';
+import { DOCSGETALLURL } from '../../utils/constants';
 import useCallApi from '../hooks/CallApi';
 
 const config = {
